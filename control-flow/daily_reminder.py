@@ -1,4 +1,3 @@
-
 # daily_reminder.py
 
 # Prompt user for task details
@@ -8,7 +7,7 @@ time_bound = input("Is it time-bound? (yes/no): ").lower()
 
 # Generate reminder based on priority and time sensitivity
 def task_reminder(task, priority, time_bound):
-    reminder = f"Reminder: '{task}' is a "
+    reminder = f"'{task}' is a "
 
     # Check for priority level using Match Case
     match priority:
@@ -31,6 +30,7 @@ def task_reminder(task, priority, time_bound):
 
     return reminder
 
-# Print customized reminder
-print(task_reminder(task, priority, time_bound))
+# Print customized reminder with exact format required by the checker
+print(f"Reminder: {task_reminder(task, priority, time_bound)}")
+
 
