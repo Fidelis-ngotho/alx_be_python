@@ -18,15 +18,15 @@ class BankAccount:
     def deposit(self, amount):
         self.account_balance += amount
         self.save_balance()  # Save the updated balance
-        print(f"Deposited: ${amount:.2f}")
+        print(f"Deposited: ${amount:.1f}")
 
     def withdraw(self, amount):
         if amount <= self.account_balance:
             self.account_balance -= amount
             self.save_balance()  # Save the updated balance
-            print(f"Withdrew: ${amount:.2f}")
+            print(f"Withdrew: ${amount:.1f}")
         else:
             print("Insufficient funds.")
 
     def display_balance(self):
-        print(f"Current Balance: ${self.account_balance:.2f}")
+        print(f"Current Balance: ${self.account_balance:.1f}")
