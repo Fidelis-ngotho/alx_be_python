@@ -1,16 +1,32 @@
+import os
+
 class BankAccount:
-    def __init__(self, initial_balance=0):
-        self.account_balance = initial_balance
+    def __init__(self):
+        self.file_path = 'balance.txt'
+        self.account_balance = self.load_balance()
+
+    def load_balance(self):
+        if os.path.exists(self.file_path):
+            with open(self.file_path, 'r') as file:
+                return float(file.read())
+        return 0.0  # Default balance if file doesn't exist
+
+    def save_balance(self):
+        with open(self.file_path, 'w') as file:
+            file.write(str(self.account_balance))
 
     def deposit(self, amount):
         self.account_balance += amount
+        self.save_balance()  # Save the updated balance
+        print(f"Deposited: ${amount:.2f}")
 
     def withdraw(self, amount):
-        if self.account_balance >= amount:
+        if amount <= self.account_balance:
             self.account_balance -= amount
-            return True
+            self.save_balance()  # Save the updated balance
+            print(f"Withdrew: ${amount:.2f}")
         else:
-            return False
+            print("Insufficient funds.")
 
     def display_balance(self):
         print(f"Current balance: ${self.account_balance:.2f}")
