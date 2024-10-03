@@ -37,4 +37,4 @@ class BankAccount:
         """
         Print the current account balance in a user-friendly format.
         """
-        print(f" Current Balance: ${self.__account_balance:.2f}")
+        print(f"Current Balance: ${self.__account_balance:.2f}")
