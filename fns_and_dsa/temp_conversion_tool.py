@@ -1,6 +1,6 @@
 # Global Conversion Factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Exact match for the required line
 FAHRENHEIT_FREEZING_POINT = 32  # Freezing point of water in Fahrenheit
 
 # Function to convert Fahrenheit to Celsius
